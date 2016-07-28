@@ -9,7 +9,7 @@
 
 VER=$1
 VER="${VER:-7}"
-DIR="/home/template/public_html/XenServer"
+DIR=`pwd`
 MaxCount=10
 DATE=`date '+%Y-%m-%d'`
 XMLFILEURL="http://updates.xensource.com/XenServer/updates.xml"
