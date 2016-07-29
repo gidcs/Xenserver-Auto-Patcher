@@ -4,7 +4,7 @@ Xenserver Auto Patcher
 Use this tools
 -------
 	
-	wget -O AutoPatch.sh https://raw.githubusercontent.com/gidcs/Xenserver-Auto-Patcher/master/AutoPatch.sh
+	wget -O AutoPatch.sh https://raw.githubusercontent.com/gidcs/Xenserver-Auto-Patcher/master/AutoPatch.sh --no-check-certificate
 	chmod 755 AutoPatch.sh
 	./AutoPatch.sh
 

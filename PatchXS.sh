@@ -6,6 +6,15 @@
 #
 # PatchXS.sh
 
+
+function get {
+	wget -c -O $1 $2 --no-check-certificate &> /dev/null	
+	if [ "$?" == "1" ]; then
+			echo "[Error] Cannot download file from server."
+		exit
+	fi
+}
+
 # get host uuid
 HOST_UUID=`xe host-list --minimal`
 
@@ -26,7 +35,7 @@ fi
 
 # download zipfile and unzip it
 XSFILE=$XSPATCH".xsupdate"
-wget -c -O $FILE $URL
+get $FILE $URL
 unzip $FILE
 echo 'ZipFile: '"$FILE"
 echo 'UpdateFile: '"$XSFILE"

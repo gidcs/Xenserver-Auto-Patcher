@@ -14,20 +14,19 @@ if [ "$VER" == "7.0" ]; then
 else
 	VER=`echo $VER | awk -F'.' '{ print $1$2}'`
 fi
-
 VER="${VER:-7}"
 
+function get {
+	wget -c -O $1 $2 --no-check-certificate &> /dev/null	
+	if [ "$?" == "1" ]; then
+			echo "[Error] Cannot download file from server."
+		exit
+	fi
+}
+
 echo "[AutoPatch] Start patching your XenServer..."
-wget -O XenServer${VER}.patch $URL/XenServer${VER}.patch &> /dev/null
-if [ "$?" == "1" ]; then
-	echo "[Error] Cannot download file from server."
-	exit
-fi
-wget -O PatchXS.sh $URL/PatchXS.sh &> /dev/null
-if [ "$?" == "1" ]; then
-        echo "[Error] Cannot download file from server."
-	exit
-fi
+get XenServer${VER}.patch $URL/XenServer${VER}.patch
+get PatchXS.sh $URL/PatchXS.sh
 chmod 755 PatchXS.sh
 cat XenServer${VER}.patch | awk '{ system("./PatchXS.sh "$1)}'
 rm -f XenServer${VER}.patch
