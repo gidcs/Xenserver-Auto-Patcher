@@ -59,6 +59,7 @@ function CreatePatch {
 	else
 		cat $XMLFILE | grep XS${VER} | grep -v '<!--' | awk -F'url="' '{ print $2 }' | awk -F'"' '{ if($1!="") { print $1 }}' > $PATCHFILE
 	fi
+	sed -i 's/&amp;/\&/g' $PATCHFILE
 }
 
 function RemoveXML {
