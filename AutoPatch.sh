@@ -10,11 +10,11 @@ URL="https://raw.githubusercontent.com/gidcs/Xenserver-Auto-Patcher/master"
 
 VER=`cat /etc/redhat-release | awk '{ print $3 }' | awk -F'.' '{ print $1"."$2}'`
 if [ "$VER" == "7.0" ]; then
-	VER="7"
+	VER="70"
 else
 	VER=`echo $VER | awk -F'.' '{ print $1$2}'`
 fi
-VER="${VER:-7}"
+VER="${VER:-70}"
 
 function get {
 	wget -c -O $1 $2 --no-check-certificate &> /dev/null	

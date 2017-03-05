@@ -8,7 +8,7 @@
 
 
 VER=$1
-VER="${VER:-7}"
+VER="${VER:-70}"
 DIR=`pwd`
 MaxCount=10
 DATE=`date '+%Y-%m-%d'`
