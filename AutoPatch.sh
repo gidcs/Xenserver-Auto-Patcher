@@ -23,7 +23,7 @@ echo "[AutoPatch] Start patching your XenServer..."
 get XenServer${VER}.patch $URL/XenServer${VER}.patch
 get PatchXS.sh $URL/PatchXS.sh
 chmod 755 PatchXS.sh
-cat XenServer${VER}.patch | awk '{ system("./PatchXS.sh "$1)}'
+cat XenServer${VER}.patch | awk '{ system("./PatchXS.sh \""$1"\"")}'
 rm -f XenServer${VER}.patch
 rm -f PatchXS.sh
 rm -f AutoPatch.sh

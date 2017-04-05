@@ -23,7 +23,7 @@ URL=$1
 
 # parse filename and get 
 FILE="XS"
-FILE+=`echo $URL | awk -F'XS' '{ print $2 }'`
+FILE+=`echo $URL | awk -F'XS' '{ print $2 }' | awk -F'&' '{print $1}'`
 XSPATCH=`echo $FILE | awk -F'.zip' '{ print $1 }'`
 
 # check if patched?
@@ -42,6 +42,10 @@ echo 'UpdateFile: '"$XSFILE"
 
 # patch
 PATCHUUID=`xe patch-upload file-name="$XSFILE"`
+if [ "$PATCHUUID" == "" ]; then
+	XSFILE=$XSPATCH".iso"
+	PATCHUUID=`xe patch-upload file-name="$XSFILE"`
+fi
 xe patch-apply host-uuid="$HOST_UUID" uuid="$PATCHUUID"
 echo "$XSFILE"' has already patched!'
 
