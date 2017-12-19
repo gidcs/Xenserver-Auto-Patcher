@@ -8,7 +8,7 @@
 
 
 VER=$1
-VER="${VER:-71}"
+VER="${VER:-72}"
 DIR=`pwd`
 MaxCount=10
 DATE=`date '+%Y-%m-%d'`
@@ -53,7 +53,7 @@ function CreateBackup {
 
 
 function CreatePatch {
-	SKIP=`cat $SKIPFILE | awk '{ if($1!="") { print $1 }}' | awk '{ printf t $1 }{t="\\\|"}'`
+	SKIP=`cat $SKIPFILE | awk '{ if($1!="") { print $1 }}' | awk '{ printf t $1 s }{t="\\\|"; s="\\\."}'`
 	if [[ "$SKIP" != "" ]]; then
 		cat $XMLFILE | grep XS${VER} | grep -v '<!--' | awk -F'url="' '{ print $2 }' | awk -F'"' '{ if($1!="") { print $1 }}' | grep -v $SKIP > $PATCHFILE
 	else
