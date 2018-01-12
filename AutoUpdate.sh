@@ -12,6 +12,7 @@
 ./AutoUpdatePatchFile.sh 70
 ./AutoUpdatePatchFile.sh 71
 ./AutoUpdatePatchFile.sh 72
+./AutoUpdatePatchFile.sh 73
 git add .                                             
 git commit -m "update patch url"
 git push
