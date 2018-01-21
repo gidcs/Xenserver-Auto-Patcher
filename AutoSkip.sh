@@ -9,6 +9,7 @@
 if [ $# != 3 ]; then
     echo "Usage:"
     echo "  $0 <skip_file> <old_patch> <new_patch>"
+    exit 1
 fi
 
 SKIP_FILE=$1
