@@ -2,15 +2,15 @@
 Xenserver Auto Patcher
 
 ```
-This project is abandoned.
-XenServer is not friendly anymore for free users.
-Hotfix does not allowed to install in the free version recently.
-IO monitoring, rate limit, CPU usage, and all of the features you might need does not work.
-Citrix just give up on bugfix and introduce more new version come with less feature as well as more and more bug.
-I was suffered for quite a long time and finally move to KVM.
+This project was abandoned.
+For free users, XenServer is no longer friendly.
+Hotfixes are not allowed to be installed in the free version recently.
+IO monitoring, rate limiting, CPU usage, and all the features you might need don't work.
+Citrix just gave up bugfix, then introduced more new versions with fewer features and more and more bugs.
+I suffered a long time and finally moved to KVM.
 XenServer is just a BUGGY and DYING operating system.
-Please don't try XenServer if you are a newcomer.
-Try to migrate to KVM if you are still using XenServer. God bless you.
+If you are a newbie, please don't try XenServer.
+If you are still using XenServer, try migrating to KVM. God bless you.
 ```
 
 Use this tools
